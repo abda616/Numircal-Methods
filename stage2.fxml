@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="390.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.202" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NUM.Stage2Controller">
+   <children>
+      <Label fx:id="info" layoutX="9.0" layoutY="23.0" prefHeight="35.0" prefWidth="285.0" text="Enter Interval Start , End and Epsilon" wrapText="true" />
+      <Label fx:id="lab_S" layoutX="18.0" layoutY="72.0" prefHeight="30.0" prefWidth="90.0" text="Start From" />
+      <Label fx:id="lab_E" layoutX="18.0" layoutY="106.0" prefHeight="30.0" prefWidth="90.0" text="End At" />
+      <Label fx:id="lab_Error" layoutX="18.0" layoutY="141.0" prefHeight="30.0" prefWidth="90.0" text="Epsilon Error" />
+      <Label fx:id="lab_out" layoutX="8.0" layoutY="216.0" prefHeight="35.0" prefWidth="285.0" wrapText="true" />
+      <TextField fx:id="S" layoutX="129.0" layoutY="72.0" prefHeight="30.0" prefWidth="160.0" text="6" />
+      <TextField fx:id="E" layoutX="129.0" layoutY="106.0" prefHeight="30.0" prefWidth="160.0" text="7" />
+      <TextField fx:id="Itr" layoutX="129.0" layoutY="141.0" prefHeight="30.0" prefWidth="160.0" text="0.0005" />
+      <Button fx:id="Run" layoutX="89.0" layoutY="281.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="125.0" text="Run" />
+   </children>
+</AnchorPane>
