@@ -201,29 +201,35 @@ public class methods {
     /***/
     protected static String Newton_met(String equation,String eq_gx, double x, double EP,int max_num,
                                        ArrayList<Integer> num,ArrayList<Double> cur_root, ArrayList<Double> arr_root, ArrayList<Double> ero_arr) {
-        while(num_of_it < max_num) {
-            if (num_of_it > 1)
-                if (ero_arr.get(num_of_it-1) <= EP) {
-                    out= "Done";break;
-                }
-            num.add(num_of_it);
-            cur_root.add(x);
-            double root = newton_root(equation,eq_gx,x);
-            arr_root.add(root);
-            if (num_of_it >= 1)
-                ero_arr.add( error( arr_root.get(num_of_it), arr_root.get(num_of_it - 1) ) );
-            if (fx(equation, root) == 0.0) {
-                out="Done";break;
-            } else {
-                ++num_of_it;
-                try{ return  Newton_met(equation, eq_gx, root, EP, max_num, num, cur_root, arr_root, ero_arr); }
-                catch (Exception e){
-                    out = "Divergence";
+        if (fx(eq_gx, x) != 0) {
+            while (num_of_it < max_num) {
+                if (num_of_it > 1)
+                    if (ero_arr.get(num_of_it - 1) <= EP) {
+                        out = "Done";
+                        break;
+                    }
+                num.add(num_of_it);
+                cur_root.add(x);
+                double root = newton_root(equation, eq_gx, x);
+                arr_root.add(root);
+                if (num_of_it >= 1)
+                    ero_arr.add(error(arr_root.get(num_of_it), arr_root.get(num_of_it - 1)));
+                if (fx(equation, root) == 0.0) {
+                    out = "Done";
+                    break;
+                } else {
+                    ++num_of_it;
+                    try {
+                        return Newton_met(equation, eq_gx, root, EP, max_num, num, cur_root, arr_root, ero_arr);
+                    } catch (Exception e) {
+                        out = "Divergence";
+                    }
                 }
             }
-        }
-        return out;
+            return out;
+        }else {return "not allowed !"; }
     }
+
     private static double newton_root(String equation,String eq_gx, double x) {
         return truncateDecimal( x-(fx(equation,x)/fx(eq_gx, x))); }
     /***/
