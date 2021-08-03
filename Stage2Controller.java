@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
-import static NUM.UntitledController.valOfD;
+import static NUM.out_Controller.valOfD;
 
 public class Stage2Controller implements Initializable {
     @FXML public Label info,lab_S,lab_E,lab_Error,lab_out;

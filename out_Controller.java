@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 import static NUM.methods.*;
-public class UntitledController implements Initializable{
+public class out_Controller implements Initializable{
     @FXML private Pane pane;
     @FXML private SplitPane splitPane;
     @FXML private AnchorPane out1;

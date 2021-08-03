@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static NUM.UntitledController.valOfD;
+import static NUM.out_Controller.valOfD;
 import static NUM.methods.error;
 
 public class Stage1Controller implements Initializable {
